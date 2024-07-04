@@ -1,0 +1,1 @@
+@extendeds('_layouts.index')
