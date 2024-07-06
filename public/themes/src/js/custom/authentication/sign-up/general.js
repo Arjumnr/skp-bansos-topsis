@@ -15,6 +15,13 @@ var KTSignupGeneral = function() {
 			form,
 			{
 				fields: {
+					'username': {
+						validators: {
+							notEmpty: {
+								message: 'Username is required'
+							}
+						}
+                    },
 					'first-name': {
 						validators: {
 							notEmpty: {
