@@ -15,7 +15,7 @@
             <!--begin:Menu item-->
             <div class="menu-item">
                 <!--begin:Menu link-->
-                <a class="menu-link" href="https://preview.keenthemes.com/html/metronic/docs/base/utilities" target="blank">
+                <a class="menu-link" href="{{ route('dashboard') }}">
                     <span class="menu-icon">
                         <!--begin::Svg Icon | path: icons/duotune/general/gen002.svg-->
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -34,7 +34,7 @@
             <!--begin:Menu item-->
             <div class="menu-item">
                 <!--begin:Menu link-->
-                <a class="menu-link" href="https://preview.keenthemes.com/html/metronic/docs/base/utilities" target="blank">
+                <a class="menu-link" href="{{ route('kriteria') }}" >
                     <span class="menu-icon">
                         <!--begin::Svg Icon | path: icons/duotune/general/gen002.svg-->
                         <span class="svg-icon svg-icon-2">
@@ -53,7 +53,7 @@
             <!--begin:Menu item-->
             <div class="menu-item">
                 <!--begin:Menu link-->
-                <a class="menu-link" href="https://preview.keenthemes.com/html/metronic/docs" target="blank">
+                <a class="menu-link" href="{{ route('kriteria') }}" >
                     <span class="menu-icon">
                         <!--begin::Svg Icon | path: icons/duotune/abstract/abs027.svg-->
                         <span class="svg-icon svg-icon-2">

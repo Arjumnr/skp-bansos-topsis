@@ -2,11 +2,34 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\Contracts\CriteriaContract;
 use Illuminate\Http\Request;
 
 class CriteriaController extends Controller
 {
-    public function index(){
-        return view ('criteria.index');
+    protected $title = 'Kriteria' , $criteriaContract;
+    public function __construct(CriteriaContract $criteriaContract)
+    {
+        $this->criteriaContract = $criteriaContract;
+    } 
+    public function index()
+    {
+        $title = $this->title;
+        return view('criteria.index', compact('title'));    
     }
+
+    public function paginated(Request $request)
+    {
+      try {
+        $datas = $this->criteriaContract->paginated($request);
+        $data = $datas['data'];
+        $view = view('criteria.data', compact('data'))->with('i', ($request->input('page', 1) -
+          1) * $request->input('length'))->render();
+        return response()->json(['html' => $view, 'total_data' => $datas['total_data'], 'total_page' => $datas['total_page'], 'message' => 'Success!'], 200);
+      } catch (\Exception $e) {
+        return response()->json(['message' => $e->getMessage(), 'line' => $e->getLine()], 500);
+      }
+    }
+  
+    
 }
