@@ -1,12 +1,12 @@
-<div class="modal fade" id="kt_modal_add_customer" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="kt_modal_add_kriteria" tabindex="-1" aria-hidden="true">
         <!--begin::Modal dialog-->
         <div class="modal-dialog modal-dialog-centered mw-650px">
                 <!--begin::Modal content-->
                 <div class="modal-content">
                         <!--begin::Modal header-->
-                        <div class="modal-header" id="kt_modal_add_customers_header">
+                        <div class="modal-header" id="kt_modal_add_kriteria_header">
                                 <!--begin::Modal title-->
-                                <h2 class="fw-bold"><span class="form-title-modal"></span> Customer</h2>
+                                <h2 class="fw-bold"><span class="form-title-modal"></span> Kriteria</h2>
                                 <!--end::Modal title-->
                                 <!--begin::Close-->
                                 <div class="btn btn-icon btn-sm btn-active-icon-primary" data-kt-users-modal-action="close">
@@ -33,107 +33,23 @@
                                                 <!--begin::Input group-->
                                                 <div class="fv-row mb-7">
                                                         <!--begin::Label-->
-                                                        <label class="required fw-semibold fs-6 mb-2">NIK</label>
+                                                        <label class="required fw-semibold fs-6 mb-2">Nama Kriteria</label>
                                                         <!--end::Label-->
                                                         <!--begin::Input-->
-                                                        <input type="number" name="nik" id="input-nik" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="NIK" />
+                                                        <input type="text" name="nama_kriteria" id="input-nama-kriteria" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Nama Kriteria" />
                                                         <!--end::Input-->
                                                 </div>
                                                 <!--end::Input group-->
                                                 <!--begin::Input group-->
                                                 <div class="fv-row mb-7">
                                                         <!--begin::Label-->
-                                                        <label class="required fw-semibold fs-6 mb-2">Full Name</label>
+                                                        <label class="required fw-semibold fs-6 mb-2">Pernyataan</label>
                                                         <!--end::Label-->
                                                         <!--begin::Input-->
-                                                        <input type="text" name="name" id="input-name" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Full name" />
+                                                        <input type="text" name="pernyataan" id="input-pernyataan" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Pernyataan" />
                                                         <!--end::Input-->
                                                 </div>
-                                                <!--end::Input group-->
-                                                <!--begin::Input group-->
-                                                <div class="fv-row mb-7">
-                                                        <!--begin::Label-->
-                                                        <label class="required fw-semibold fs-6 mb-2">Email</label>
-                                                        <!--end::Label-->
-                                                        <!--begin::Input-->
-                                                        <input type="email" name="email" id="input-email" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="example@domain.com" />
-                                                        <!--end::Input-->
-                                                </div>
-                                                <!--end::Input group-->
-                                                <!--begin::Input group-->
-                                                <div class="fv-row mb-7">
-                                                        <!--begin::Label-->
-                                                        <label class="required fw-semibold fs-6 mb-2">Tempat Lahir</label>
-                                                        <!--end::Label-->
-                                                        <!--begin::Input-->
-                                                        <input type="text" name="tempat_lahir" id="input-tempat-lahir" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Makassar" />
-                                                        <!--end::Input-->
-                                                </div>
-                                                <!--end::Input group-->
-                                                <!--begin::Input group-->
-                                                <div class="fv-row mb-7">
-                                                        <!--begin::Label-->
-                                                        <label class="required fw-semibold fs-6 mb-2">Tanggal Lahir</label>
-                                                        <!--end::Label-->
-                                                        <!--begin::Input-->
-                                                        <input type="date" name="tanggal_lahir" id="input-tanggal-lahir" class="form-control form-control-solid mb-3 mb-lg-0" />
-                                                        <!--end::Input-->
-                                                </div>
-                                                <!--end::Input group-->
-                                                <!--begin::Select Option-->
-                                                <div class="fv-row mb-7">
-                                                        <!--begin::Label-->
-                                                        <label class="required fw-semibold fs-6 mb-2">Jenis Kelamin</label>
-                                                        <!--end::Label-->
-                                                        <!--begin::Input-->
-                                                        <select name="jenis_kelamin" id="input-jenis-kelamin" class="form-select form-select-solid mb-3 mb-lg-0">
-                                                                <option value="">Select</option>
-                                                                <option value="L">Laki-laki</option>
-                                                                <option value="P">Perempuan</option>
-                                                        </select>
-                                                        <!--end::Input-->
-                                                </div>
-                                                <!--end::Select Option-->
-                                                <!--begin::Input group-->
-                                                <div class="fv-row mb-7">
-                                                        <!--begin::Label-->
-                                                        <label class="required fw-semibold fs-6 mb-2">Telepon</label>
-                                                        <!--end::Label-->
-                                                        <!--begin::Input-->
-                                                        <input type="text" name="telepon" id="input-telepon" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="081234567890" />
-                                                        <!--end::Input-->
-                                                </div>
-                                                <!--end::Input group-->
-                                                <!--begin::Input group-->
-                                                <div class="fv-row mb-7">
-                                                        <!--begin::Label-->
-                                                        <label class="required fw-semibold fs-6 mb-2">Alamat</label>
-                                                        <!--end::Label-->
-                                                        <!--begin::Input-->
-                                                        <input type="text" name="alamat" id="input-alamat" class="form-control form-control-solid mb-3 mb-lg-0" />
-                                                        <!--end::Input-->
-                                                </div>
-                                                <!--end::Input group-->
-                                                <!--begin::Input group-->
-                                                <div class="fv-row mb-7">
-                                                        <!--begin::Label-->
-                                                        <label class="required fw-semibold fs-6 mb-2">Pekerjaan</label>
-                                                        <!--end::Label-->
-                                                        <!--begin::Input-->
-                                                        <input type="text" name="pekerjaan" id="input-pekerjaan" class="form-control form-control-solid mb-3 mb-lg-0" />
-                                                        <!--end::Input-->
-                                                </div>
-                                                <!--end::Input group-->
-                                                <!--begin::Input File-->
-                                                <div class="fv-row mb-7">
-                                                        <!--begin::Label-->
-                                                        <label class="required fw-bold fs-6 mb-2">KTP</label>
-                                                        <!--end::Label-->
-                                                        <!--begin::Input-->
-                                                        <input type="file" name="ktp" id="input-ktp" class="form-control form-control-solid mb-3 mb-lg-0" />
-                                                        <!--end::Input-->
-                                                </div>
-                                                <!--end::Input File-->
+                                                <!--end::Input group-->                                              
                                         </div>
                                         <!--end::Scroll-->
                                         <!--begin::Actions-->

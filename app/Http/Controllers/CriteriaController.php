@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Services\Contracts\CriteriaContract;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
 class CriteriaController extends Controller
@@ -31,5 +32,27 @@ class CriteriaController extends Controller
       }
     }
   
+    public function store(Request $request)
+    {
+      try{
+        //VALIDATE THE VALUE
+        $validatedData = Validator::make($request->all(), [
+          'nama_kriteria' => 'required',
+          'pernyataan' => 'required',
+        ]);
+
+        //IF FAIL
+        if ($validatedData->fails()){
+          return response()->json(['message' => "Terjadi Kesalahan"], 500);
+        }
+
+        $data = $request->all();
+
+        return $this->criteriaContract->store($data);
+
+      } catch (\Exception $e) {
+        return response()->json(['message' => $e->getMessage(), 'line' => $e->getLine()], 500);
+      }
+    }
     
 }

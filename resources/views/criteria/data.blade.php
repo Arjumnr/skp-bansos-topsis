@@ -1,30 +1,31 @@
 @forelse($data as $v)
 <!--begin::Table row-->
 <tr>
-        <!--begin::Checkbox-->
+        <!--begin::Nomor-->
         <td>
                 <span class="text-gray-800">{{ ++$i }}</span>
         </td>
-        <!--end::Checkbox-->
-        <!--begin::NIK=-->
+        <!--end::Nomor-->
+
+        <!--begin::Nama Kriteria=-->
         <td>
                 <div class="badge badge-light fw-bold">{{ $v['nama_kriteria'] }}</div>
         </td>
-        <!--end::Role=-->
-        <!--begin::User=-->
+        <!--end::Nama Kriteria=-->
+
+        <!--begin::Kriteria=-->
         <td class="d-flex align-items-center">
-                <!--begin::User details-->
+                <!--begin::Kriteria details-->
                 <div class="d-flex flex-column">
                         <div class="text-gray-800 text-hover-primary mb-1">{{ $v['pernyataan'] }}</div>
-                        {{-- <span>{{ $v['email'] }}</span> --}}
                 </div>
-                <!--begin::User details-->
+                <!--begin::Kriteria details-->
         </td>
-        <!--end::User=-->
+        <!--end::Kriteria=-->
        
         <!--begin::Action=-->
         <td class="text-end">
-                <a href="javascript:void(0)" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer" data-id="update-{{ $v['id'] }}">
+                <a href="javascript:void(0)" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#kt_modal_add_kriteria" data-id="update-{{ $v['id'] }}">
                         <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                         <span class="svg-icon svg-icon-3">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

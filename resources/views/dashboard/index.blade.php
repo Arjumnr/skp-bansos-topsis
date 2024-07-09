@@ -1,25 +1,25 @@
 @extends('_layouts.index')
 
 @push('css-vendor')
-    <link href="{{ asset('themes/dist/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css') }}" rel="stylesheet"
+    <link href="{{ asset('assets/plugins/custom/fullcalendar/fullcalendar.bundle.css') }}" rel="stylesheet"
         type="text/css" />
-    <link href="{{ asset('themes/dist/assets/plugins/custom/datatables/datatables.bundle.css') }}" rel="stylesheet"
+    <link href="{{ asset('assets/plugins/custom/datatables/datatables.bundle.css') }}" rel="stylesheet"
         type="text/css" />
 @endpush
 
 @push('css-custom')
-    <link href="{{ asset('themes/dist/assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('themes/dist/assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
 @endpush
 
 @push('javascript-global')
-    <script src="{{ asset('themes/dist/assets/plugins/custom/jquery/jquery-3.7.0.min.js') }}"></script>
-    <script src="{{ asset('themes/dist/assets/plugins/global/plugins.bundle.js') }}"></script>
-    <script src="{{ asset('themes/dist/assets/js/scripts.bundle.js') }}"></script>
+    <script src="{{ asset('assets/plugins/custom/jquery/jquery-3.7.0.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/global/plugins.bundle.js') }}"></script>
+    <script src="{{ asset('assets/js/scripts.bundle.js') }}"></script>
 @endpush
 
 @push('javascript-vendor')
-    <script src="{{ asset('themes/dist/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js') }}"></script>
+    <script src="{{ asset('assets/plugins/custom/fullcalendar/fullcalendar.bundle.js') }}"></script>
     <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
     <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
     <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
@@ -31,18 +31,18 @@
     <script src="https://cdn.amcharts.com/lib/5/geodata/usaLow.js"></script>
     <script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZonesLow.js"></script>
     <script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZoneAreasLow.js"></script>
-    <script src="{{ asset('themes/dist/assets/plugins/custom/datatables/datatables.bundle.js') }}"></script>
+    <script src="{{ asset('assets/plugins/custom/datatables/datatables.bundle.js') }}"></script>
 @endpush
 
 @push('javascript-custom')
-    <script src="{{ asset('themes/dist/assets/js/widgets.bundle.js') }}"></script>
-    <script src="{{ asset('themes/dist/assets/js/custom/widgets.js') }}"></script>
-    <script src="{{ asset('themes/dist/assets/js/custom/apps/chat/chat.js') }}"></script>
-    <script src="{{ asset('themes/dist/assets/js/custom/utilities/modals/upgrade-plan.js') }}"></script>
-    <script src="{{ asset('themes/dist/assets/js/custom/utilities/modals/create-app.js') }}"></script>
-    <script src="{{ asset('themes/dist/assets/js/custom/utilities/modals/new-target.js') }}"></script>
-    <script src="{{ asset('themes/dist/assets/js/custom/utilities/modals/users-search.js') }}"></script>
-    <script src="{{ asset('themes/dist/assets/js/dashboard/dashboard.js') }}"></script>
+    <script src="{{ asset('assets/js/widgets.bundle.js') }}"></script>
+    <script src="{{ asset('assets/js/custom/widgets.js') }}"></script>
+    <script src="{{ asset('assets/js/custom/apps/chat/chat.js') }}"></script>
+    <script src="{{ asset('assets/js/custom/utilities/modals/upgrade-plan.js') }}"></script>
+    <script src="{{ asset('assets/js/custom/utilities/modals/create-app.js') }}"></script>
+    <script src="{{ asset('assets/js/custom/utilities/modals/new-target.js') }}"></script>
+    <script src="{{ asset('assets/js/custom/utilities/modals/users-search.js') }}"></script>
+    <script src="{{ asset('assets/js/dashboard/dashboard.js') }}"></script>
 @endpush
 
 @section('content')

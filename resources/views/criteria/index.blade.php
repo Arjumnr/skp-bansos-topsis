@@ -1,46 +1,61 @@
 @extends('_layouts.index')
 
 @push('css-vendor')
-<link href="{{ asset('themes/dist/assets/plugins/custom/datatables/datatables.bundle.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('assets/plugins/custom/datatables/datatables.bundle.css') }}" rel="stylesheet" type="text/css" />
 @endpush
 
+
 @push('css-custom')
-<link href="{{ asset('themes/dist/assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
-<link href="{{ asset('themes/dist/assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
 @endpush
 
 @push('javascript-global')
-<script src="{{ asset('themes/dist/assets/plugins/custom/jquery/jquery-3.7.0.min.js') }}"></script>
-<script src="{{ asset('themes/dist/assets/plugins/global/plugins.bundle.js') }}"></script>
-<script src="{{ asset('themes/dist/assets/js/scripts.bundle.js') }}"></script>
+<script src="{{ asset('assets/plugins/custom/jquery/jquery-3.7.0.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/global/plugins.bundle.js') }}"></script>
+<script src="{{ asset('assets/js/scripts.bundle.js') }}"></script>
 @endpush
 
+
 @push('javascript-vendor')
-<script src="{{ asset('themes/dist/assets/plugins/custom/datatables/datatables.bundle.js') }}"></script>
-<script src="{{ asset('themes/dist/assets/plugins/custom/pagination/jquery.twbsPagination.js') }}"></script>
+<script src="{{ asset('assets/plugins/custom/datatables/datatables.bundle.js') }}"></script>
+<script src="{{ asset('assets/plugins/custom/pagination/jquery.twbsPagination.js') }}"></script>
+<script src="{{ asset('assets/plugins/custom/fullcalendar/fullcalendar.bundle.js') }}"></script>
+<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/radar.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/geodata/continentsLow.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/geodata/usaLow.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZonesLow.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZoneAreasLow.js"></script>
 @endpush
 
 @push('javascript-custom')
-<script src="{{ asset('themes/dist/assets/js/widgets.bundle.js') }}"></script>
-<script src="{{ asset('themes/dist/assets/js/custom/widgets.js') }}"></script>
-<script src="{{ asset('themes/dist/assets/js/custom/apps/chat/chat.js') }}"></script>s
-<script src="{{ asset('themes/dist/assets/js/custom/utilities/modals/upgrade-plan.js') }}"></script>
-<script src="{{ asset('themes/dist/assets/js/custom/utilities/modals/create-app.js') }}"></script>
-<script src="{{ asset('themes/dist/assets/js/custom/utilities/modals/users-search.js') }}"></script>
-<script src="{{ asset('themes/dist/assets/js/criteria/criteria-crud.js') }}"></script>
-<script src="{{ asset('themes/dist/assets/js/criteria/table.js') }}"></script>
+<script src="{{ asset('assets/js/widgets.bundle.js') }}"></script>
+<script src="{{ asset('assets/js/custom/widgets.js') }}"></script>
+<script src="{{ asset('assets/js/custom/apps/chat/chat.js') }}"></script>s
+<script src="{{ asset('assets/js/custom/utilities/modals/upgrade-plan.js') }}"></script>
+<script src="{{ asset('assets/js/custom/utilities/modals/create-app.js') }}"></script>
+<script src="{{ asset('assets/js/custom/utilities/modals/users-search.js') }}"></script>
+<script src="{{ asset('assets/js/criteria/criteria-crud.js') }}"></script>
+<script src="{{ asset('assets/js/criteria/table.js') }}"></script>
 @endpush
 
 @section('content')
 <div class="d-flex flex-column flex-column-fluid">
     <!--begin::Toolbar-->
+    <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
     <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
         <!--begin::Toolbar container-->
         <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
             <!--begin::Page title-->
             <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                 <!--begin::Title-->
-                <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Customers List</h1>
+                <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Kriteria List</h1>
                 <!--end::Title-->
                 <!--begin::Breadcrumb-->
                 <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -55,15 +70,7 @@
                     </li>
                     <!--end::Item-->
                     <!--begin::Item-->
-                    <li class="breadcrumb-item text-muted">Customer Management</li>
-                    <!--end::Item-->
-                    <!--begin::Item-->
-                    <li class="breadcrumb-item">
-                        <span class="bullet bg-gray-400 w-5px h-2px"></span>
-                    </li>
-                    <!--end::Item-->
-                    <!--begin::Item-->
-                    <li class="breadcrumb-item text-muted">Customers</li>
+                    <li class="breadcrumb-item text-muted">Kriteria</li>
                     <!--end::Item-->
                 </ul>
                 <!--end::Breadcrumb-->
@@ -93,7 +100,7 @@
                                 </svg>
                             </span>
                             <!--end::Svg Icon-->
-                            <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid w-250px ps-14" placeholder="Search customer" id="kt_table_search" />
+                            <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid w-250px ps-14" placeholder="Search kriteria" id="kt_table_search" />
                         </div>
                         <!--end::Search-->
                     </div>
@@ -114,8 +121,8 @@
                                 </span>
                                 <!--end::Svg Icon-->Export</button> --}}
                             <!--end::Export-->
-                            <!--begin::Add customer-->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer" data-id="create-0">
+                            <!--begin::Add kriteria-->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_kriteria" data-id="create-0">
                                 <!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
                                 <span class="svg-icon svg-icon-2">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -123,8 +130,8 @@
                                         <rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="currentColor" />
                                     </svg>
                                 </span>
-                                <!--end::Svg Icon-->Add Customer</button>
-                            <!--end::Add customer-->
+                                <!--end::Svg Icon-->Add Kriteria</button>
+                            <!--end::Add kriteria-->
                         </div>
                         <!--end::Toolbar-->
                         <!--begin::Group actions-->
@@ -136,10 +143,10 @@
                         </div>
                         <!--end::Group actions-->
                         <!--begin::Modal - Adjust Balance-->
-                        {{-- @include('content.customers.modal-export') --}}
+                        {{-- @include('content.kriterias.modal-export') --}}
                         <!--end::Modal - New Card-->
                         <!--begin::Modal - Add task-->
-                        {{-- @include('content.customers.modal-create-edit') --}}
+                        @include('criteria.modal-create-edit')
                         <!--end::Modal - Add task-->
                     </div>
                     <!--end::Card toolbar-->
@@ -189,5 +196,6 @@
         <!--end::Content container-->
     </div>
     <!--end::Content-->
+</div>
 </div>
 @endsection

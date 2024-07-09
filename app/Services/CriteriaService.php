@@ -36,7 +36,7 @@ class CriteriaService extends BaseRepository implements CriteriaContract
         $limit = $request->input('length');
 
         if (empty($request->input('search'))) {
-            $criterias = $this->model->paginate($limit);
+            $criterias = $this->model->orderBy('id', 'DESC')->paginate($limit);
         } else {
             $search = $request->input('search');
 
@@ -70,10 +70,23 @@ class CriteriaService extends BaseRepository implements CriteriaContract
         ];
     }
 
-    public function data()
+    public function store(array $request)
     {
-        return $this->model->newQuery();
+            $kriteria =  $this->model->create([
+                'nama_kriteria' => $request['nama_kriteria'],
+                'pernyataan' => $request['pernyataan'],
+            ]);
+
+            // Check if data is created
+            if (!$kriteria) {
+                return response()->json(['message' => "Customer Gagal Dibuat", 'code' => 400], 400);
+            }
+
+            // Customer created
+            return response()->json(['message' => "Customer Berhasil Dibuat", 'code' => 201], 201);
+        
     }
+
 
     public function findByCriteria(array $criteria): ?Model
     {
