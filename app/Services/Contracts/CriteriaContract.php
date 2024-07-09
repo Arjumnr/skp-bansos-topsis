@@ -9,6 +9,8 @@ interface CriteriaContract
 {
         public function paginated(Request $request);
 
+        public function data();
+
         public function findByCriteria(array $criteria): ?Model;
 
         public function update(array $data, $id);

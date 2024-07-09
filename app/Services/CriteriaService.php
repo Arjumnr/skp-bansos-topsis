@@ -105,6 +105,11 @@ class CriteriaService extends BaseRepository implements CriteriaContract
         return response()->json(['message' => "Kriteria Berhasil Diupdate", 'code' => 200], 200);
     }
 
+    //count data in dashboard
+    public function data(){
+        return $this->model->newQuery();
+    }
+
 
     public function findByCriteria(array $criteria): ?Model
     {
