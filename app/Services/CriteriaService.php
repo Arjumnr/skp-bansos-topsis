@@ -87,6 +87,24 @@ class CriteriaService extends BaseRepository implements CriteriaContract
         
     }
 
+    public function update(array $request, $id)
+    {
+        $dataNew = [];
+        $dataOld = $this->model->find($id);
+
+        $dataNew['nama_kriteria'] = $request['nama_kriteria'];
+        $dataNew['pernyataan'] = $request['pernyataan'];
+
+        $update = $dataOld->update($dataNew);
+
+        // Check if data is updated
+        if (!$update) {
+            return response()->json(['message' => "Kriteria Gagal Diupdate", 'code' => 400], 400);
+        }
+
+        return response()->json(['message' => "Kriteria Berhasil Diupdate", 'code' => 200], 200);
+    }
+
 
     public function findByCriteria(array $criteria): ?Model
     {
@@ -94,8 +112,5 @@ class CriteriaService extends BaseRepository implements CriteriaContract
     }
 
 
-    public function update(array $request, $id)
-    {
-        return;
-    }
+    
 }

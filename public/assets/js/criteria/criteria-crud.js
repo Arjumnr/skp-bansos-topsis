@@ -134,7 +134,7 @@ $(document).ready(function () {
                     notEmpty: { message: "Nama Kriteria is required" },
                 },
             },
-            pernyataam: {
+            pernyataan: {
                 validators: {
                     notEmpty: {
                         message: "Pernyataan is required",
@@ -174,19 +174,9 @@ $(document).ready(function () {
                 success: function (data) {
                     data = data.data;
                     $("#input-id").val(data.id);
-                    $("#input-nik").val(data.nik);
-                    $("#input-name").val(data.nama);
-                    $("#input-email").val(data.email);
-                    $("#input-telepon").val(data.telepon);
-                    $("#input-alamat").val(data.alamat);
-                    $("#input-tempat-lahir").val(data.tempat_lahir);
-                    $("#input-tanggal-lahir")
-                        .val(data.tanggal_lahir)
-                        .trigger("change");
-                    $("#input-jenis-kelamin")
-                        .val(data.jenis_kelamin)
-                        .trigger("change");
-                    $("#input-pekerjaan").val(data.pekerjaan);
+                    $("#input-nama-kriteria").val(data.nama_kriteria);
+                    $("#input-pernyataan").val(data.pernyataan);
+                   
                 },
                 error: function (data) {
                     var errorsString = "";

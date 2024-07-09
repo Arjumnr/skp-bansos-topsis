@@ -54,5 +54,55 @@ class CriteriaController extends Controller
         return response()->json(['message' => $e->getMessage(), 'line' => $e->getLine()], 500);
       }
     }
+
+    public function show($id)
+    {
+      try {
+        $kriteria = $this->criteriaContract->find($id);
+
+        return response()->json(['message' => 'Success!', 'code' => 200, 'data' => $kriteria], 200); // ['data' => $kriteria
+      } catch (\Exception $e) {
+        return response()->json(['message' => "kriteria Tidak Ditemukan"], 500);
+      }
+    }
+
+    public function update(Request $request, $id)
+    {
+      try {
+        // Validate the value...
+        $validatedData = Validator::make($request->all(), [
+          'nama_kriteria' => 'required',
+          'pernyataan' => 'required',
+        ]);
+
+        // if fail
+        if ($validatedData->fails()) {
+          return response()->json(['message' => "Terjadi Kesalahan", 'code' => 500], 500);
+        }
+
+        $data = $request->all();
+
+        return $this->criteriaContract->update($data, $id);
+        
+      } catch (\Exception $e) {
+        return response()->json(['message' => $e->getMessage()], 500);
+      }
+    }
+
+    public function destroy($id)
+    {
+      try {
+        $kriteria = $this->criteriaContract->delete($id);
+
+        if ($kriteria == 0) {
+          return response()->json(['message' => 'kriteria not found!', 'code' => 404], 404);
+        }
+
+
+        return response()->json(['message' => 'kriteria has been deleted!', 'code' => 200], 200);
+      } catch (\Exception $e) {
+        return response()->json(['message' => $e->getMessage()], 500);
+      }
+    }
     
 }

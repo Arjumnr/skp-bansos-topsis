@@ -31,14 +31,10 @@ Route::group(
                         Route::get('/', 'CriteriaController@index')->name('kriteria');
                         Route::get('/data', 'CriteriaController@paginated')->name('kriteria.data');
                         Route::post('/', 'CriteriaController@store')->name('kriteria.store');
-                        Route::get('/kriteria/{id}', 'CriteriaController@show')->name('kriteria.show');
-                        Route::put('/kriteria/{id}', 'CriteriaController@update')->name('kriteria.update');
-                        Route::delete('/kriteria/{id}', 'CriteriaController@destroy')->name('kriteria.destroy');
-                        // Route::get('/create', [CriteriaController::class, 'create'])->name('admin.kriteria.create');
-                        // Route::post('/store', [CriteriaController::class, 'store'])->name('admin.kriteria.store');
-                        // Route::get('/edit/{id}', [CriteriaController::class, 'edit'])->name('admin.kriteria.edit');
-                        // Route::post('/update/{id}', [CriteriaController::class, 'update'])->name('admin.kriteria.update');
-                        // Route::get('/delete/{id}', [CriteriaController::class, 'destroy'])->name('admin.kriteria.delete');
+                        Route::get('/{id}', 'CriteriaController@show')->name('kriteria.show');
+                        Route::put('/{id}', 'CriteriaController@update')->name('kriteria.update');
+                        Route::delete('/{id}', 'CriteriaController@destroy')->name('kriteria.destroy');
+                  
                     }
                 );
 
