@@ -38,6 +38,19 @@ Route::group(
                     }
                 );
 
+                Route::group(
+                    ['prefix' => 'warga'],
+                    function () {
+                        Route::get('/', 'WargaController@index')->name('warga');
+                        Route::get('/data', 'WargaController@paginated')->name('warga.data');
+                        Route::post('/', 'WargaController@store')->name('warga.store');
+                        Route::get('/{id}', 'WargaController@show')->name('warga.show');
+                        Route::put('/{id}', 'WargaController@update')->name('warga.update');
+                        Route::delete('/{id}', 'WargaController@destroy')->name('warga.destroy');
+                  
+                    }
+                );
+
                 // Route::get('/', [DashboardController::class, 'index'])->name('admin');
                 // Route::get('/dashboard/{id}', [DashboardController::class, 'dataPengiriman'])->name('admin.dashboard');
 

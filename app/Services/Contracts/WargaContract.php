@@ -5,7 +5,7 @@ namespace App\Services\Contracts;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
 
-interface CriteriaContract
+interface WargaContract
 {
         public function paginated(Request $request);
 

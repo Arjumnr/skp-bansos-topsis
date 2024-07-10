@@ -20,7 +20,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $models = array(
-            'Criteria'
+            'Criteria',
+            'Warga'
         );
 
         // Initialize Service
