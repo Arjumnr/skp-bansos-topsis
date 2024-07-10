@@ -163,6 +163,8 @@
                                 <th class="min-w-100px">No</th>
                                 <th class="min-w-100px">Nama Kriteria</th>
                                 <th class="min-w-100px">Pernyataan</th>
+                                <th class="min-w-100px">Tipe</th>
+                                <th class="min-w-100px">Bobot</th>
                                 <th class="text-end min-w-100px">Actions</th>
                             </tr>
                             <!--end::Table row-->

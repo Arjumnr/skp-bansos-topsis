@@ -13,15 +13,35 @@
         </td>
         <!--end::Nama Kriteria=-->
 
-        <!--begin::Kriteria=-->
-        <td class="d-flex align-items-center">
-                <!--begin::Kriteria details-->
+        <!--begin::Pernyataan=-->
+        <td>
+                <!--begin::Pernyataan -->
                 <div class="d-flex flex-column">
                         <div class="text-gray-800 text-hover-primary mb-1">{{ $v['pernyataan'] }}</div>
                 </div>
-                <!--begin::Kriteria details-->
+                <!--begin::Pernyataan -->
         </td>
-        <!--end::Kriteria=-->
+        <!--end::Pernyataan=-->
+       
+        <!--begin::Tipe=-->
+        <td>
+                <!--begin::Tipe-->
+                <div class="d-flex flex-column">
+                        <div class="text-gray-800 text-hover-primary mb-1">{{ $v['tipe'] }}</div>
+                </div>
+                <!--begin::Tipe-->
+        </td>
+        <!--end::Tipe=-->
+       
+        <!--begin::Bobot=-->
+        <td>
+                <!--begin::Bobot -->
+                <div class="d-flex flex-column">
+                        <div class="text-gray-800 text-hover-primary mb-1">{{ $v['bobot'] }}</div>
+                </div>
+                <!--begin::Bobot -->
+        </td>
+        <!--end::Bobot=-->
        
         <!--begin::Action=-->
         <td class="text-end">

@@ -36,7 +36,7 @@
                                                         <label class="required fw-semibold fs-6 mb-2">NIK</label>
                                                         <!--end::Label-->
                                                         <!--begin::Input-->
-                                                        <input type="text" name="nik" id="input-nik" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="NIK" />
+                                                        <input type="number" name="nik" id="input-nik" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="NIK" />
                                                         <!--end::Input-->
                                                 </div>
                                                 <!--end::Input group-->
@@ -57,7 +57,7 @@
                                                         <label class="required fw-semibold fs-6 mb-2">RT</label>
                                                         <!--end::Label-->
                                                         <!--begin::Input-->
-                                                        <input type="text" name="rt" id="input-rt" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="RT" />
+                                                        <input type="number" name="rt" id="input-rt" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="RT" />
                                                         <!--end::Input-->
                                                 </div>
                                                 <!--end::Input group--> 
@@ -68,7 +68,7 @@
                                                         <label class="required fw-semibold fs-6 mb-2">RW</label>
                                                         <!--end::Label-->
                                                         <!--begin::Input-->
-                                                        <input type="text" name="rw" id="input-rw" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="rw" />
+                                                        <input type="number" name="rw" id="input-rw" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="rw" />
                                                         <!--end::Input-->
                                                 </div>
                                                 <!--end::Input group--> 

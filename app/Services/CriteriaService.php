@@ -38,6 +38,8 @@ class CriteriaService extends BaseRepository implements CriteriaContract
 
             $criterias = $this->model->where('nama_kriteria', 'LIKE', "%{$search}%")
                 ->orWhere('pernyataan', 'LIKE', "%{$search}%")
+                ->orWhere('tipe', 'LIKE', "%{$search}%")
+                ->orWhere('bobot', 'LIKE', "%{$search}%")
                 ->paginate($limit);
 
             $totalFiltered = $this->model->where('nama_kriteria', 'LIKE', "%{$search}%")
@@ -53,6 +55,8 @@ class CriteriaService extends BaseRepository implements CriteriaContract
                 $nestedData['id'] = $customer->id;
                 $nestedData['nama_kriteria'] = $customer->nama_kriteria;
                 $nestedData['pernyataan'] = $customer->pernyataan;
+                $nestedData['tipe'] = $customer->tipe;
+                $nestedData['bobot'] = $customer->bobot;
 
                 $data[] = $nestedData;
             }
@@ -71,6 +75,8 @@ class CriteriaService extends BaseRepository implements CriteriaContract
             $kriteria =  $this->model->create([
                 'nama_kriteria' => $request['nama_kriteria'],
                 'pernyataan' => $request['pernyataan'],
+                'tipe' => $request['tipe'],
+                'bobot' => $request['bobot'],
             ]);
 
             // Check if data is created
@@ -90,6 +96,8 @@ class CriteriaService extends BaseRepository implements CriteriaContract
 
         $dataNew['nama_kriteria'] = $request['nama_kriteria'];
         $dataNew['pernyataan'] = $request['pernyataan'];
+        $dataNew['tipe'] = $request['tipe'];
+        $dataNew['bobot'] = $request['bobot'];
 
         $update = $dataOld->update($dataNew);
 

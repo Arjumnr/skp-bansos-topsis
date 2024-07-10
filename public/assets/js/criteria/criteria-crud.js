@@ -176,6 +176,8 @@ $(document).ready(function () {
                     $("#input-id").val(data.id);
                     $("#input-nama-kriteria").val(data.nama_kriteria);
                     $("#input-pernyataan").val(data.pernyataan);
+                    $("#input-tipe").val(data.tipe);
+                    $("#input-bobot").val(data.bobot);
                    
                 },
                 error: function (data) {

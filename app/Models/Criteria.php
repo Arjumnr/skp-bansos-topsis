@@ -13,5 +13,7 @@ class Criteria extends Model
     protected $fillable = [
         'nama_kriteria',
         'pernyataan',
+        'tipe',
+        'bobot',
     ];
 }

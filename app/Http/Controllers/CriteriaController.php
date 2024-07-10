@@ -40,6 +40,8 @@ class CriteriaController extends Controller
         $validatedData = Validator::make($request->all(), [
           'nama_kriteria' => 'required',
           'pernyataan' => 'required',
+          'tipe' => 'required',
+          'bobot' => 'required',
         ]);
 
         //IF FAIL
@@ -74,6 +76,8 @@ class CriteriaController extends Controller
         $validatedData = Validator::make($request->all(), [
           'nama_kriteria' => 'required',
           'pernyataan' => 'required',
+          'tipe' => 'required',
+          'bobot' => 'required',
         ]);
 
         // if fail

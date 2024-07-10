@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('nama_kriteria');
             $table->string('pernyataan')->unique();
+            $table->string('tipe');
+            $table->integer('bobot');
             $table->timestamps();
         });
     }

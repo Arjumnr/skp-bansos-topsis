@@ -50,6 +50,26 @@
                                                         <!--end::Input-->
                                                 </div>
                                                 <!--end::Input group-->                                              
+                                                <!--begin::Input group-->
+                                                <div class="fv-row mb-7">
+                                                        <!--begin::Label-->
+                                                        <label class="required fw-semibold fs-6 mb-2">Tipe</label>
+                                                        <!--end::Label-->
+                                                        <!--begin::Input-->
+                                                        <input type="text" name="tipe" id="input-tipe" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Benefit / Cost" />
+                                                        <!--end::Input-->
+                                                </div>
+                                                <!--end::Input group-->                                              
+                                                <!--begin::Input group-->
+                                                <div class="fv-row mb-7">
+                                                        <!--begin::Label-->
+                                                        <label class="required fw-semibold fs-6 mb-2">Bobot</label>
+                                                        <!--end::Label-->
+                                                        <!--begin::Input-->
+                                                        <input type="number" name="bobot" id="input-bobot" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Bobot" />
+                                                        <!--end::Input-->
+                                                </div>
+                                                <!--end::Input group-->                                              
                                         </div>
                                         <!--end::Scroll-->
                                         <!--begin::Actions-->
