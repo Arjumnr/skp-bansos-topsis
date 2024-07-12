@@ -21,7 +21,8 @@ class AppServiceProvider extends ServiceProvider
     {
         $models = array(
             'Criteria',
-            'Warga'
+            'Warga',
+            'Kusioner'
         );
 
         // Initialize Service

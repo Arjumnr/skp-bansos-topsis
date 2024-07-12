@@ -51,6 +51,19 @@ Route::group(
                     }
                 );
 
+                Route::group(
+                    ['prefix' => 'kusioner'],
+                    function () {
+                        Route::get('/', 'KusionerController@index')->name('kusioner');
+                        Route::get('/data', 'KusionerController@dataForm')->name('kusioner.data');
+                        // Route::post('/', 'KusionerController@store')->name('warga.store');
+                        // Route::get('/{id}', 'KusionerController@show')->name('warga.show');
+                        // Route::put('/{id}', 'KusionerController@update')->name('warga.update');
+                        // Route::delete('/{id}', 'KusionerController@destroy')->name('warga.destroy');
+                  
+                    }
+                );
+
                 // Route::get('/', [DashboardController::class, 'index'])->name('admin');
                 // Route::get('/dashboard/{id}', [DashboardController::class, 'dataPengiriman'])->name('admin.dashboard');
 

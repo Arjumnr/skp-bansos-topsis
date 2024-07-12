@@ -18,7 +18,8 @@ class DatabaseSeeder extends Seeder
        //run UserSeeder and CriteriaSeeder
         $this->call([
             UserSeeder::class,
-            CriteriaSeeder::class
+            CriteriaSeeder::class,
+            WargaSeeder::class
         ]);
     }
 }
