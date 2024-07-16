@@ -172,8 +172,7 @@
                                         <th class="min-w-100px">No</th>
                                         <th class="min-w-100px">Kepala Keluarga</th>
                                         <th class="min-w-100px">Pernyataan Kriteria</th>
-                                        <th class="min-w-100px">Bobot Kriteria</th>
-                                        <th class="min-w-100px">Bobot Jawaban</th>
+                                        <th class="min-w-100px">Opsi</th>
                                         <th class="text-end min-w-100px">Actions</th>
                                     </tr>
                                     <!--end::Table row-->

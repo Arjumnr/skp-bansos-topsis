@@ -15,8 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('kepala_keluarga_id');
             $table->integer('kriteria_id');
-            $table->integer('bobot_kriteria');
-            $table->integer('bobot_jawaban');
+            $table->integer('option_id');
             $table->timestamps();
         });
     }

@@ -51,35 +51,33 @@
                                 @foreach (Helper::getData('warga') as $item)
                                     <option value="{{ $item->id }}">{{ $item->kepala_keluarga }}</option>
                                 @endforeach
-                                {{-- <option value="">Select a Country...</option>
-                                <option value="AF">Afghanistan</option>
-                                <option value="AX">Aland Islands</option> --}}
                             </select>
                             <!--begin::Select Option-->
                         </div>
                         <!--end::Select Option-->
 
-                        @foreach(Helper::getData('criteria') as $index => $criteria)
-                        <!--begin::Select Option-->
-                        <div class="fv-row mb-7">
-                            <!--begin::Label-->
-                            <label class="required fw-semibold fs-6 mb-2">{{ $criteria->pernyataan }}</label>
-                            <!--end::Label-->
-                            <!--begin::Select-->
-                            <select name="kriteria_{{ $criteria->id }}" id="input-kriteria-{{ $criteria->id }}" data-control="select2"
-                                data-dropdown-parent="#kt_modal_add_kusioner" data-placeholder="Pilih Kriteria {{ $index + 1 }}..."
-                                class="form-select form-select-solid">
+                        @foreach (Helper::getData('criteria') as $index => $criteria)
+                            <!--begin::Select Option-->
+                            <div class="fv-row mb-7">
+                                <!--begin::Label-->
+                                <label class="required fw-semibold fs-6 mb-2">{{ $criteria->pernyataan }}</label>
+                                <!--end::Label-->
+                                <!--begin::Select-->
+                                <select name="kriteria_{{ $criteria->id }}" id="input-kriteria-{{ $criteria->id }}"
+                                    data-control="select2" data-dropdown-parent="#kt_modal_add_kusioner"
+                                    data-placeholder="Pilih Kriteria {{ $index + 1 }}..."
+                                    class="form-select form-select-solid">
                                     <option value=""></option>
-                                @foreach (Helper::getData('options') as $item)
-                                    @if ($item->kriteria_id == $criteria->id)
-                                        <option value="{{ $item->id }}">{{ $item->opsi }}</option>
-                                    @endif
-                                @endforeach
-                            </select>
-                            <!--end::Select-->
-                        </div>
-                        <!--end::Select Option-->
-                    @endforeach
+                                    @foreach (Helper::getData('options') as $item)
+                                        @if ($item->kriteria_id == $criteria->id)
+                                            <option value="{{ $item->id }}">{{ $item->opsi }}</option>
+                                        @endif
+                                    @endforeach
+                                </select>
+                                <!--end::Select-->
+                            </div>
+                            <!--end::Select Option-->
+                        @endforeach
                     </div>
                     <!--end::Scroll-->
                     <!--begin::Actions-->

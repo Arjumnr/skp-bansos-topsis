@@ -23,65 +23,12 @@ class KusionerService extends BaseRepository implements KusionerContract
         $this->model = $kusioner->whereNotNull('id');
     }
 
-    // public function paginated(Request $request)
-    // {
-
-    //     $search = [];
-    //     $totalData = Kusioner::count();
-
-    //     $totalFiltered = $totalData;
-
-    //     $limit = $request->input('length');
-
-    //     if (empty($request->input('search'))) {
-    //         $kusioners = $this->model->orderBy('id', 'DESC')->paginate($limit);
-    //     } else {
-    //         $search = $request->input('search');
-
-    //         // 'kepala_keluarga_id',
-    //         // 'kriteria_id',
-    //         // 'bobot_kriteria',
-    //         // 'bobot_jawaban'
-            
-
-    //         $kusioners = $this->model->where('nama_kriteria', 'LIKE', "%{$search}%")
-    //             ->orWhere('pernyataan', 'LIKE', "%{$search}%")
-    //             ->orWhere('tipe', 'LIKE', "%{$search}%")
-    //             ->orWhere('bobot', 'LIKE', "%{$search}%")
-    //             ->paginate($limit);
-
-    //         $totalFiltered = $this->model->where('nama_kriteria', 'LIKE', "%{$search}%")
-    //             ->orWhere('pernyataan', 'LIKE', "%{$search}%")
-    //             ->count();
-    //     }
-
-    //     $data = [];
-
-    //     if (!empty($kusioners)) {
-    //         // providing a dummy id instead of database ids
-    //         foreach ($kusioners as $customer) {
-    //             $nestedData['id'] = $customer->id;
-    //             $nestedData['nama_kriteria'] = $customer->nama_kriteria;
-    //             $nestedData['pernyataan'] = $customer->pernyataan;
-    //             $nestedData['tipe'] = $customer->tipe;
-    //             $nestedData['bobot'] = $customer->bobot;
-
-    //             $data[] = $nestedData;
-    //         }
-    //     }
-
-    //     return [
-    //         'total_page' => $kusioners->lastPage(),
-    //         'total_data' => $totalFiltered ?? 0,
-    //         'code' => 200,
-    //         'data' => $data,
-    //     ];
-    // }
-
     public function store(array $request)
     {
 
         $data = $request;
+       
+
         $dataKriteria = Criteria::all();
 
         $kepala_keluarga_id = [];
@@ -92,7 +39,7 @@ class KusionerService extends BaseRepository implements KusionerContract
 
            // Initialize the array to store kriteria strings
         $kriteria_strings = [];
-        $bobot_jawaban = [];
+        $option_id = [];
 
         // Extract kriteria keys and build the kriteria_strings array
         foreach ($data as $key => $value) {
@@ -101,11 +48,17 @@ class KusionerService extends BaseRepository implements KusionerContract
 
                 if (preg_match('/(\d+)/', $key, $matches)) {
                     $index = $matches[1];
-                    // Add the corresponding value to bobot_jawaban array
-                    $bobot_jawaban[] = $value;
+                    // Add the corresponding value to option_id array
+                    $option_id[] = $value;
                 }
             }
         }
+
+        // return response()->json([
+        //     'kepala_keluarga_id' => $kepala_keluarga_id,    
+        //     'kriteria_strings' => $kriteria_strings,
+        //     'option_id' => $option_id
+        // ]); 
 
         // Initialize the array to store kriteria IDs
         $kriteria_id = [];
@@ -118,27 +71,15 @@ class KusionerService extends BaseRepository implements KusionerContract
             }
         }
 
-        $bobot_kriteria = [];
-
-        foreach ($kriteria_id as $id) {
-            // Since $id might start from 1 and $dataKriteria indices start from 0, adjust accordingly
-            $index = $id - 1; // Adjust index to match array indexing (if $id starts from 1)
         
-            if (isset($dataKriteria[$index])) {
-                $bobot = $dataKriteria[$index]->bobot;
-                if ($bobot !== null) {
-                    $bobot_kriteria[] = $bobot;
-                }
-            }
-        }
 
         //gabung semua
         $datas = [
             'kepala_keluarga_id' => $kepala_keluarga_id,
             'kriteria_id' => $kriteria_id,
-            'bobot_kriteria' => $bobot_kriteria,
-            'bobot_jawaban' => $bobot_jawaban
+            'option_id' => $option_id
         ];
+
             
         $datas = [];
         $count = count($kepala_keluarga_id); // Assuming all arrays are of the same length
@@ -147,10 +88,11 @@ class KusionerService extends BaseRepository implements KusionerContract
             $datas[] = [
                 'kepala_keluarga_id' => $kepala_keluarga_id[$i],
                 'kriteria_id' => $kriteria_id[$i],
-                'bobot_kriteria' => $bobot_kriteria[$i],
-                'bobot_jawaban' => $bobot_jawaban[$i],
+                'option_id' => $option_id[$i],
             ];
         }
+        // return response()->json($datas, 200);
+
         
         // Now $datas should be structured correctly as a multidimensional array
         
@@ -162,8 +104,7 @@ class KusionerService extends BaseRepository implements KusionerContract
             $kriteria = $this->model->create([
                 'kepala_keluarga_id' => $data['kepala_keluarga_id'],
                 'kriteria_id' => $data['kriteria_id'],
-                'bobot_kriteria' => $data['bobot_kriteria'],
-                'bobot_jawaban' => $data['bobot_jawaban']
+                'option_id' => $data['option_id']
             ]);
         }
 
@@ -178,25 +119,6 @@ class KusionerService extends BaseRepository implements KusionerContract
         
     }
 
-    // public function update(array $request, $id)
-    // {
-    //     $dataNew = [];
-    //     $dataOld = $this->model->find($id);
-
-    //     $dataNew['nama_kriteria'] = $request['nama_kriteria'];
-    //     $dataNew['pernyataan'] = $request['pernyataan'];
-    //     $dataNew['tipe'] = $request['tipe'];
-    //     $dataNew['bobot'] = $request['bobot'];
-
-    //     $update = $dataOld->update($dataNew);
-
-    //     // Check if data is updated
-    //     if (!$update) {
-    //         return response()->json(['message' => "Kriteria Gagal Diupdate", 'code' => 400], 400);
-    //     }
-
-    //     return response()->json(['message' => "Kriteria Berhasil Diupdate", 'code' => 200], 200);
-    // }
 
     //count data in dashboard
     public function data(){

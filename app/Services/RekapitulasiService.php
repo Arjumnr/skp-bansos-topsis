@@ -33,20 +33,23 @@ class RekapitulasiService extends BaseRepository implements RekapitulasiContract
         $limit = $request->input('length');
 
         if (empty($request->input('search'))) {
-            $kusioners = $this->model->with('getWarga', 'getKriteria')->orderBy('id', 'DESC')->paginate($limit);
+            $kusioners = $this->model->with('getWarga', 'getKriteria', 'getOptions')->orderBy('id', 'DESC')->paginate($limit);
         } else {
             $search = $request->input('search');
 
-            $kusioners = $this->model->where('bobot_jawaban', 'LIKE', "%{$search}%")
+            $kusioners = $this->model->where('id', 'LIKE', "%{$search}%")
                 ->orWhereHas('getWarga', function ($query) use ($search) {
                     $query->where('kepala_keluarga', 'like', "%{$search}%");
                 })
                 ->orWhereHas('getKriteria', function ($query) use ($search) {
                     $query->where('pernyataan', 'like', "%{$search}%");
                 })
+                ->orWhereHas('getOptions', function ($query) use ($search) {
+                    $query->where('opsi', 'like', "%{$search}%");
+                })
                 ->paginate($limit);
 
-            $totalFiltered = $this->model->where('bobot_jawaban', 'LIKE', "%{$search}%")
+            $totalFiltered = $this->model->where('id', 'LIKE', "%{$search}%")
                 ->orWhere('kepala_keluarga_id', 'LIKE', "%{$search}%")
                 ->count();
         }
@@ -59,8 +62,7 @@ class RekapitulasiService extends BaseRepository implements RekapitulasiContract
                 $nestedData['id'] = $kusioner->id;
                 $nestedData['kepala_keluarga_id'] = $kusioner->kepala_keluarga_id;
                 $nestedData['kriteria_id'] = $kusioner->getKriteria->pernyataan;
-                $nestedData['bobot_kriteria'] = $kusioner->bobot_kriteria;
-                $nestedData['bobot_jawaban'] = $kusioner->bobot_jawaban;
+                $nestedData['option_id'] = $kusioner->option_id;
 
                 $data[] = $nestedData;
             }

@@ -187,7 +187,7 @@ $(document).ready(function () {
                         }).then((result) => {
                             modal.modal("hide");
                             //to dashboard
-                            window.location.href = "/admin";
+                            window.location.href = "/rekapitulasi";
                             // load_data();
                         });
                     }

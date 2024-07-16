@@ -27,21 +27,14 @@
         </td>
         <!--end::Pernyataan=-->
 
-        <!--begin::Tipe=-->
-        <td>
-            <!--begin::Tipe-->
-            <div class="d-flex flex-column">
-                <div class="text-gray-800 text-hover-primary mb-1">{{ $v['bobot_kriteria'] }}</div>
-            </div>
-            <!--begin::Tipe-->
-        </td>
-        <!--end::Tipe=-->
-
+       
         <!--begin::Bobot=-->
         <td>
             <!--begin::Bobot -->
             <div class="d-flex flex-column">
-                <div class="text-gray-800 text-hover-primary mb-1">{{ $v['bobot_jawaban'] }}</div>
+                <div class="text-gray-800 text-hover-primary mb-1">
+                    {{ Helper::getData('options')->where('id', $v['option_id'])->first()->opsi }}
+                </div>
             </div>
             <!--begin::Bobot -->
         </td>

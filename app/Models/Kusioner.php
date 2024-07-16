@@ -12,8 +12,7 @@ class Kusioner extends Model
     protected $fillable = [
         'kepala_keluarga_id',
         'kriteria_id',
-        'bobot_kriteria',
-        'bobot_jawaban'
+        'option_id',
     ];
 
     public function getWarga()
@@ -24,6 +23,11 @@ class Kusioner extends Model
     public function getKriteria()
     {
         return $this->hasOne('App\Models\Criteria', 'id', 'kriteria_id');
+    }
+
+    public function getOptions()
+    {
+        return $this->hasOne('App\Models\Options', 'id', 'options_id');
     }
 
 
