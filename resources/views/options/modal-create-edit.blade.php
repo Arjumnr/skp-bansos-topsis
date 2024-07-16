@@ -1,12 +1,12 @@
-<div class="modal fade" id="kt_modal_add_kusioner" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="kt_modal_add_options" tabindex="-1" aria-hidden="true">
     <!--begin::Modal dialog-->
     <div class="modal-dialog modal-dialog-centered mw-650px">
         <!--begin::Modal content-->
         <div class="modal-content">
             <!--begin::Modal header-->
-            <div class="modal-header" id="kt_modal_add_kusioner_header">
+            <div class="modal-header" id="kt_modal_add_options_header">
                 <!--begin::Modal title-->
-                <h2 class="fw-bold"><span class="form-title-modal"></span> Kriteria</h2>
+                <h2 class="fw-bold"><span class="form-title-modal"></span> Options</h2>
                 <!--end::Modal title-->
                 <!--begin::Close-->
                 <div class="btn btn-icon btn-sm btn-active-icon-primary" data-kt-users-modal-action="close">
@@ -36,50 +36,47 @@
                         data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}"
                         data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_user_header"
                         data-kt-scroll-wrappers="#kt_modal_add_user_scroll" data-kt-scroll-offset="300px">
-
+                        <!--begin::Input group-->
+                        <div class="fv-row mb-7">
+                            <!--begin::Label-->
+                            <label class="required fw-semibold fs-6 mb-2">Opsi</label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <input type="text" name="opsi" id="input-opsi"
+                                class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Opsi" />
+                            <!--end::Input-->
+                        </div>
+                        <!--end::Input group-->
 
                         <!--begin::Select Option-->
                         <div class="fv-row mb-7">
                             <!--begin::Label-->
-                            <label class="required fw-semibold fs-6 mb-2">Warga</label>
+                            <label class="required fw-semibold fs-6 mb-2">Kriteria</label>
                             <!--end::Label-->
                             <!--begin::Select-->
-                            <select name="kepala_keluarga_id" id="input-kepala-keluarga" data-control="select2"
-                                data-dropdown-parent="#kt_modal_add_kusioner" data-placeholder="Pilih Warga..."
+                            <select name="kriteria_id" id="input-kriteria-id" data-control="select2"
+                                data-dropdown-parent="#kt_modal_add_options" data-placeholder="Pilih Kriteria..."
                                 class="form-select form-select-solid">
                                 <option value="">--- Pilih Warga ---</option>
-                                @foreach (Helper::getData('warga') as $item)
-                                    <option value="{{ $item->id }}">{{ $item->kepala_keluarga }}</option>
+                                @foreach (Helper::getData('criteria') as $item)
+                                    <option value="{{ $item->id }}">{{ $item->pernyataan }}</option>
                                 @endforeach
-                                {{-- <option value="">Select a Country...</option>
-                                <option value="AF">Afghanistan</option>
-                                <option value="AX">Aland Islands</option> --}}
                             </select>
                             <!--begin::Select Option-->
                         </div>
                         <!--end::Select Option-->
 
-                        @foreach(Helper::getData('criteria') as $index => $criteria)
-                        <!--begin::Select Option-->
+                        <!--begin::Input group-->
                         <div class="fv-row mb-7">
                             <!--begin::Label-->
-                            <label class="required fw-semibold fs-6 mb-2">{{ $criteria->pernyataan }}</label>
+                            <label class="required fw-semibold fs-6 mb-2">Bobot</label>
                             <!--end::Label-->
-                            <!--begin::Select-->
-                            <select name="kriteria_{{ $criteria->id }}" id="input-kriteria-{{ $criteria->id }}" data-control="select2"
-                                data-dropdown-parent="#kt_modal_add_kusioner" data-placeholder="Pilih Kriteria {{ $index + 1 }}..."
-                                class="form-select form-select-solid">
-                                    <option value=""></option>
-                                @foreach (Helper::getData('options') as $item)
-                                    @if ($item->kriteria_id == $criteria->id)
-                                        <option value="{{ $item->id }}">{{ $item->opsi }}</option>
-                                    @endif
-                                @endforeach
-                            </select>
-                            <!--end::Select-->
+                            <!--begin::Input-->
+                            <input type="number" name="bobot" id="input-bobot"
+                                class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Bobot" />
+                            <!--end::Input-->
                         </div>
-                        <!--end::Select Option-->
-                    @endforeach
+                        <!--end::Input group-->
                     </div>
                     <!--end::Scroll-->
                     <!--begin::Actions-->

@@ -19,7 +19,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
             CriteriaSeeder::class,
-            WargaSeeder::class
+            WargaSeeder::class,
+            OptionsSeeder::class
         ]);
     }
 }

@@ -42,10 +42,6 @@
     <script src="{{ asset('assets/js/custom/utilities/modals/create-app.js') }}"></script>
     <script src="{{ asset('assets/js/custom/utilities/modals/users-search.js') }}"></script>
     <script src="{{ asset('assets/js/kusioner/kusioner-crud.js') }}"></script>
-    {{-- <script src="{{ asset('assets/js/kusioner/list-warga.js') }}"></script> --}}
-    {{-- <script src="{{ asset('assets/js/custom/utilities/modals/new-address.js') }}"></script> --}}
-
-    {{-- <script src="{{ asset('assets/js/kusioner/table.js') }}"></script> --}}
 @endpush
 
 @section('content')

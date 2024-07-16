@@ -9,7 +9,7 @@
 
         <!--begin::Nama Kriteria=-->
         <td>
-                <div class="badge badge-light fw-bold">{{ $v['nama_kriteria'] }}</div>
+                <div class="badge badge-light fw-bold">{{ $v['opsi'] }}</div>
         </td>
         <!--end::Nama Kriteria=-->
 
@@ -17,21 +17,11 @@
         <td>
                 <!--begin::Pernyataan -->
                 <div class="d-flex flex-column">
-                        <div class="text-gray-800 text-hover-primary mb-1">{{ $v['pernyataan'] }}</div>
+                        <div class="text-gray-800 text-hover-primary mb-1">{{ Helper::getData('criteria')->where('id', $v['kriteria_id'])->first()->pernyataan }}</div>
                 </div>
                 <!--begin::Pernyataan -->
         </td>
         <!--end::Pernyataan=-->
-       
-        <!--begin::Tipe=-->
-        <td>
-                <!--begin::Tipe-->
-                <div class="d-flex flex-column">
-                        <div class="text-gray-800 text-hover-primary mb-1">{{ $v['tipe'] }}</div>
-                </div>
-                <!--begin::Tipe-->
-        </td>
-        <!--end::Tipe=-->
        
         <!--begin::Bobot=-->
         <td>
@@ -45,7 +35,7 @@
        
         <!--begin::Action=-->
         <td class="text-end">
-                <a href="javascript:void(0)" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#kt_modal_add_kriteria" data-id="update-{{ $v['id'] }}">
+                <a href="javascript:void(0)" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#kt_modal_add_options" data-id="update-{{ $v['id'] }}">
                         <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                         <span class="svg-icon svg-icon-3">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

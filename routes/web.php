@@ -39,6 +39,19 @@ Route::group(
                 );
 
                 Route::group(
+                    ['prefix' => 'options'],
+                    function () {
+                        Route::get('/', 'OptionsController@index')->name('options');
+                        Route::get('/data', 'OptionsController@paginated')->name('options.data');
+                        Route::post('/', 'OptionsController@store')->name('options.store');
+                        Route::get('/{id}', 'OptionsController@show')->name('options.show');
+                        Route::put('/{id}', 'OptionsController@update')->name('options.update');
+                        Route::delete('/{id}', 'OptionsController@destroy')->name('options.destroy');
+                  
+                    }
+                );
+
+                Route::group(
                     ['prefix' => 'warga'],
                     function () {
                         Route::get('/', 'WargaController@index')->name('warga');
@@ -47,6 +60,19 @@ Route::group(
                         Route::get('/{id}', 'WargaController@show')->name('warga.show');
                         Route::put('/{id}', 'WargaController@update')->name('warga.update');
                         Route::delete('/{id}', 'WargaController@destroy')->name('warga.destroy');
+                  
+                    }
+                );
+
+                Route::group(
+                    ['prefix' => 'rekapitulasi'],
+                    function () {
+                        Route::get('/', 'RekapitulasiController@index')->name('rekapitulasi');
+                        Route::get('/data', 'RekapitulasiController@paginated')->name('rekapitulasi.data');
+                        // Route::post('/', 'WargaController@store')->name('warga.store');
+                        // Route::get('/{id}', 'WargaController@show')->name('warga.show');
+                        // Route::put('/{id}', 'WargaController@update')->name('warga.update');
+                        Route::delete('/{id}', 'RekapitulasiController@destroy')->name('rekapitulasi.destroy');
                   
                     }
                 );

@@ -22,12 +22,15 @@ class AppServiceProvider extends ServiceProvider
         $models = array(
             'Criteria',
             'Warga',
-            'Kusioner'
+            'Kusioner',
+            'Rekapitulasi',
+            'Options',
         );
 
         // Initialize Service
         foreach ($models as $model) {
             $this->app->bind("App\Services\Contracts\\{$model}Contract", "App\Services\\{$model}Service");
         }
+
     }
 }
