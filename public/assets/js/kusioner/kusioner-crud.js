@@ -1,63 +1,6 @@
 $(document).ready(function () {
     var url_name = "kusioner";
 
-    // Pagination config
-    var $pagination = $("#kt_table_paginate");
-    var defaultOpts = {
-        totalPages: 1,
-        hideOnlyOnePage: false,
-
-        prev: '<i class="previous"></i>',
-        next: '<i class="next"></i>',
-
-        paginationClass: "pagination",
-        pageClass: "paginate_button page-item",
-        nextClass: "next",
-        prevClass: "previous",
-    };
-    // $pagination.twbsPagination(defaultOpts);
-
-    // Search
-    // var search = $("#kt_table_search");
-    // search.on("keyup change", function () {
-    //     var search = $(this).val();
-    //     load_data(1, search);
-    // });
-
-    // function load_data(page = 1, search = "", length = 5) {
-    //     $.ajax({
-    //         url: url_name + "/data",
-    //         method: "GET",
-    //         data: {
-    //             page: page,
-    //             search: search,
-    //             length: length,
-    //         },
-    //         dataType: "json",
-    //         success: function (data) {
-    //             // Pagination
-    //             var total_page = data.total_page;
-    //             var current_page = $pagination.twbsPagination("getCurrentPage");
-    //             $pagination.twbsPagination("destroy");
-    //             $pagination.twbsPagination(
-    //                 $.extend({}, defaultOpts, {
-    //                     startPage: current_page,
-    //                     totalPages: total_page,
-    //                     visiblePages: 4,
-    //                     initiateStartPageClick: false,
-    //                     onPageClick: function (event, page) {
-    //                         load_data(page, search);
-    //                     },
-    //                 })
-    //             );
-
-    //             $(".data-ajax-table").html(data.html);
-    //         },
-    //     });
-    // }
-
-    // load_data();
-
     // Initiate modal
     var form_modal = $("#form-create-edit");
     var modal = $("#kt_modal_add_kusioner");
@@ -65,8 +8,6 @@ $(document).ready(function () {
     var modal_submit = modal.find('[data-kt-users-modal-action="submit"]');
     var modal_cancel = modal.find('[data-kt-users-modal-action="cancel"]');
     var modal_close = modal.find('[data-kt-users-modal-action="close"]');
-
-    
 
     // Modal Close
     modal_close.on("click", function (e) {
@@ -131,15 +72,16 @@ $(document).ready(function () {
     // Validation
     var validation_form = FormValidation.formValidation(form_modal[0], {
         fields: {
-            nama_kriteria: {
+            kepala_keluarga_id: {
                 validators: {
-                    notEmpty: { message: "Nama Kriteria is required" },
+                    notEmpty: { message: "Warga is required" },
                 },
             },
-            pernyataan: {
+            'kriteria_*': {
                 validators: {
                     notEmpty: {
-                        message: "Pernyataan is required",
+                        message: "Kriteria is required",
+
                     },
                 },
             },
@@ -157,18 +99,6 @@ $(document).ready(function () {
     // Show modal
     modal.on("show.bs.modal", function (e) {
         console.log(e)
-        // var method = $(e.relatedTarget).data("id").split("-")[0];
-
-        // if (method == "create") {
-        //     modal_title.html("Add");
-        //     form_modal.attr("action", "POST");
-        //     form_modal.trigger("reset");
-        // } else if ((method = "update")) {
-        //     modal_title.html("Edit");
-        //     form_modal.attr("action", "PUT");
-        //     form_modal.trigger("reset");
-
-        //     var id = $(e.relatedTarget).data("id").split("-")[1];
 
             $.ajax({
                 url: url_name + "/" + 'data',
@@ -256,7 +186,9 @@ $(document).ready(function () {
                             confirmButtonText: "Ok",
                         }).then((result) => {
                             modal.modal("hide");
-                            load_data();
+                            //to dashboard
+                            window.location.href = "/admin";
+                            // load_data();
                         });
                     }
                 },

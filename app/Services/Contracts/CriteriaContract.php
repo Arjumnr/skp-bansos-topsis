@@ -16,7 +16,9 @@ interface CriteriaContract
         public function update(array $data, $id);
 
 
+
         //function from BaseService
+        public function all();
         public function find($id);
         public function delete($id);
         public function store(array $request);

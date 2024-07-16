@@ -30,6 +30,7 @@
             },
             "type": "library",
             "autoload": {
+               
                 "psr-4": {
                     "Brick\\Math\\": "src/"
                 }
@@ -2053,9 +2054,13 @@
             },
             "autoload": {
                 "classmap": [
-                    "src/"
+                    "src/",
+                     "app/Helpers"
                 ]
             },
+            "files":[
+                "app/Helper/Helper.php"
+            ],
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause",
@@ -2126,6 +2131,9 @@
                 }
             },
             "autoload": {
+                "files": [
+                    "app/Helpers/Helper.php"
+                ],
                 "classmap": [
                     "src/"
                 ]

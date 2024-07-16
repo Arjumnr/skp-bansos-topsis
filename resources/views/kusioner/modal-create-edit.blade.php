@@ -38,7 +38,7 @@
                         data-kt-scroll-wrappers="#kt_modal_add_user_scroll" data-kt-scroll-offset="300px">
 
 
-
+                        <!--begin::Select Option-->
                         <div class="fv-row mb-7">
                             <!--begin::Label-->
                             <label class="required fw-semibold fs-6 mb-2">Warga</label>
@@ -47,6 +47,7 @@
                             <select name="kepala_keluarga_id" id="input-kepala-keluarga" data-control="select2"
                                 data-dropdown-parent="#kt_modal_add_kusioner" data-placeholder="Pilih Warga..."
                                 class="form-select form-select-solid">
+                                <option value="">--- Pilih Warga ---</option>
                                 @foreach (Helper::getData('warga') as $item)
                                     <option value="{{ $item->id }}">{{ $item->kepala_keluarga }}</option>
                                 @endforeach
@@ -57,50 +58,52 @@
                             <!--begin::Select Option-->
                         </div>
                         <!--end::Select Option-->
-                        <!--begin::Input group-->
+
+                        @foreach(Helper::getData('criteria') as $index => $criteria)
+                        <!--begin::Select Option-->
                         <div class="fv-row mb-7">
                             <!--begin::Label-->
-                            <label class="required fw-semibold fs-6 mb-2">Nama Kriteria</label>
+                            <label class="required fw-semibold fs-6 mb-2">{{ $criteria->pernyataan }}</label>
                             <!--end::Label-->
-                            <!--begin::Input-->
-                            <input type="text" name="nama_kriteria" id="input-nama-kriteria"
-                                class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Nama Kriteria" />
-                            <!--end::Input-->
+                            <!--begin::Select-->
+                            <select name="kriteria_{{ $criteria->id }}" id="input-kriteria-{{ $criteria->id }}" data-control="select2"
+                                data-dropdown-parent="#kt_modal_add_kusioner" data-placeholder="Pilih Kriteria {{ $index + 1 }}..."
+                                class="form-select form-select-solid">
+                                    <option value=""></option>
+                                    @if ($index == 0)
+                                        <option value="5">< 100.000</option>
+                                        <option value="4">100.000 - 400.000</option>
+                                        <option value="3">400.000 - 900.000</option>
+                                        <option value="2">900.000 - 1.400.000</option>
+                                        <option value="1">> 1.400.000 - 2.500.000</option>
+                                    @elseif ($index == 1)
+                                        <option value="5">8 Orang</option>
+                                        <option value="4">7 Orang</option>
+                                        <option value="3">4 - 6 Orang</option>
+                                        <option value="2">2 - 3 Orang</option>
+                                        <option value="1">1 Orang</option>
+                                    @elseif ($index == 2)
+                                        <option value="5">Tidak Bekerja</option>
+                                        <option value="4">Buruh</option>
+                                        <option value="3">Pedagang</option>
+                                        <option value="2">Petani</option>
+                                        <option value="1">Wiraswasta</option>
+                                    @elseif ($index == 3)
+                                        <option value="5">Tanah</option>
+                                        <option value="4">Kayu</option>
+                                        <option value="3">Semen</option>
+                                        <option value="2">Tanah Tanpa Plester</option>
+                                        <option value="1">Lantai Plester</option>
+                                    @elseif ($index == 4)
+                                        <option value="3">Bambu</option>
+                                        <option value="2">Kayu</option>
+                                        <option value="1">Tempok Tanpa Plester</option>
+                                    @endif
+                            </select>
+                            <!--end::Select-->
                         </div>
-                        <!--end::Input group-->
-                        <!--begin::Input group-->
-                        <div class="fv-row mb-7">
-                            <!--begin::Label-->
-                            <label class="required fw-semibold fs-6 mb-2">Pernyataan</label>
-                            <!--end::Label-->
-                            <!--begin::Input-->
-                            <input type="text" name="pernyataan" id="input-pernyataan"
-                                class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Pernyataan" />
-                            <!--end::Input-->
-                        </div>
-                        <!--end::Input group-->
-                        <!--begin::Input group-->
-                        <div class="fv-row mb-7">
-                            <!--begin::Label-->
-                            <label class="required fw-semibold fs-6 mb-2">Tipe</label>
-                            <!--end::Label-->
-                            <!--begin::Input-->
-                            <input type="text" name="tipe" id="input-tipe"
-                                class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Benefit / Cost" />
-                            <!--end::Input-->
-                        </div>
-                        <!--end::Input group-->
-                        <!--begin::Input group-->
-                        <div class="fv-row mb-7">
-                            <!--begin::Label-->
-                            <label class="required fw-semibold fs-6 mb-2">Bobot</label>
-                            <!--end::Label-->
-                            <!--begin::Input-->
-                            <input type="number" name="bobot" id="input-bobot"
-                                class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Bobot" />
-                            <!--end::Input-->
-                        </div>
-                        <!--end::Input group-->
+                        <!--end::Select Option-->
+                    @endforeach
                     </div>
                     <!--end::Scroll-->
                     <!--begin::Actions-->
