@@ -40,7 +40,7 @@ class CriteriaSeeder extends Seeder
             ],
             [
                 'nama_kriteria' => 'Kriteria 5',
-                'pernyataan' => 'Jumlah Dinding',
+                'pernyataan' => 'Jenis Dinding',
                 'tipe' => 'Benefit',
                 'bobot' => 5
             ],

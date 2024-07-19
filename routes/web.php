@@ -90,6 +90,19 @@ Route::group(
                     }
                 );
 
+                Route::group(
+                    ['prefix' => 'topsis'],
+                    function () {
+                        Route::get('/', 'TopsisController@index')->name('topsis');
+                        Route::get('/data-penerima', 'TopsisController@paginated_data_penerima')->name('topsis.data');
+                        // Route::post('/', 'TopsisController@store')->name('topsis.store');
+                        // Route::get('/{id}', 'TopsisController@show')->name('topsis.show');
+                        // Route::put('/{id}', 'TopsisController@update')->name('topsis.update');
+                        Route::delete('/{id}', 'TopsisController@destroy')->name('topsis.destroy');
+                  
+                    }
+                );
+
                 // Route::get('/', [DashboardController::class, 'index'])->name('admin');
                 // Route::get('/dashboard/{id}', [DashboardController::class, 'dataPengiriman'])->name('admin.dashboard');
 

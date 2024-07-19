@@ -23,6 +23,7 @@ class WargaController extends Controller
     {
       try {
         $datas = $this->wargaContract->paginated($request);
+        // return response()->json($datas, 200);
         $data = $datas['data'];
         $view = view('warga.data', compact('data'))->with('i', ($request->input('page', 1) -
           1) * $request->input('length'))->render();

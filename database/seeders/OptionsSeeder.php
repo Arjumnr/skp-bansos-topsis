@@ -30,7 +30,7 @@ class OptionsSeeder extends Seeder
     // @elseif ($index == 4)
     //     <option value="3">Bambu</option>
     //     <option value="2">Kayu</option>
-    //     <option value="1">Tempok Tanpa Plester</option>
+    //     <option value="1">Tembok Tanpa Plester</option>
     // @endif
         DB::table('options')->insert([
             [
@@ -152,7 +152,7 @@ class OptionsSeeder extends Seeder
                 'Bobot' => 4
             ],
             [
-                'opsi' => 'Tempok Tanpa Plester',
+                'opsi' => 'Tembok Tanpa Plester',
                 'kriteria_id' => 5,
                 'Bobot' => 3
             ],

@@ -6,7 +6,6 @@ use App\Models\Kusioner;
 use App\Services\BaseRepository;
 use App\Services\Contracts\RekapitulasiContract;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
 
 

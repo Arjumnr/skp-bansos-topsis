@@ -25,6 +25,7 @@ class AppServiceProvider extends ServiceProvider
             'Kusioner',
             'Rekapitulasi',
             'Options',
+            'Topsis',
         );
 
         // Initialize Service

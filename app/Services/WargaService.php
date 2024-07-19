@@ -62,6 +62,7 @@ class WargaService extends BaseRepository implements WargaContract
                 $data[] = $nestedData;
             }
         }
+        // return response()->json($data);
 
         return [
             'total_page' => $wargas->lastPage(),

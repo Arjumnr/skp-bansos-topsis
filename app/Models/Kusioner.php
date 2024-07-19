@@ -27,7 +27,7 @@ class Kusioner extends Model
 
     public function getOptions()
     {
-        return $this->hasOne('App\Models\Options', 'id', 'options_id');
+        return $this->hasOne('App\Models\Options', 'id', 'option_id');
     }
 
 
