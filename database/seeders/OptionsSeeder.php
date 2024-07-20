@@ -13,25 +13,7 @@ class OptionsSeeder extends Seeder
      */
     public function run(): void
     {
-  
     
-    // @elseif ($index == 2)
-    //     <option value="5">Tidak Bekerja</option>
-    //     <option value="4">Buruh</option>
-    //     <option value="3">Pedagang</option>
-    //     <option value="2">Petani</option>
-    //     <option value="1">Wiraswasta</option>
-    // @elseif ($index == 3)
-    //     <option value="5">Tanah</option>
-    //     <option value="4">Kayu</option>
-    //     <option value="3">Semen</option>
-    //     <option value="2">Tanah Tanpa Plester</option>
-    //     <option value="1">Lantai Plester</option>
-    // @elseif ($index == 4)
-    //     <option value="3">Bambu</option>
-    //     <option value="2">Kayu</option>
-    //     <option value="1">Tembok Tanpa Plester</option>
-    // @endif
         DB::table('options')->insert([
             [
                 'opsi' => '< 100.000',

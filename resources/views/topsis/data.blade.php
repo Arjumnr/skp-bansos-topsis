@@ -1,5 +1,4 @@
 @forelse($data as $v)
-
     <!--begin::Table row-->
     <tr>
         <!--begin::Nomor-->
@@ -114,10 +113,8 @@
         </td>
         <!--end::Pernyataan=-->
 
-       
-        
-</tr>
-<!--end::Table row-->
+    </tr>
+    <!--end::Table row-->
 @empty
     <tr>
         <td colspan="6" class="d-flex align-items-center">No data available</td>

@@ -35,6 +35,7 @@ $(document).ready(function () {
             },
             dataType: "json",
             success: function (data) {
+                console.log(data);
                 // Pagination
                 var total_page = data.total_page;
                 var current_page = $pagination.twbsPagination("getCurrentPage");
@@ -186,6 +187,7 @@ $(document).ready(function () {
                 method: "GET",
                 dataType: "json",
                 success: function (data) {
+
                     data = data.data;
                     $("#input-id").val(data.id);
                     $("#input-nik").val(data.nik);
