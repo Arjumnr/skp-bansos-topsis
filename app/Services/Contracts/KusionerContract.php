@@ -20,5 +20,7 @@ interface KusionerContract
         public function find($id);
         public function delete($id);
         public function store(array $request);
+        public function getByCriteria(array $criteria);
+
 
 }

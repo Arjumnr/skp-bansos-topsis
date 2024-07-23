@@ -21,6 +21,7 @@ class KusionerController extends Controller
     }
 
     public function index(){
+        
         $title = $this->title;
         // $total_criteria = $this->kusionerContract->data()->count();
         return view('kusioner.index', compact('title'));

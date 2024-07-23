@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\Contracts\KusionerContract;
 use App\Services\Contracts\WargaContract;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class WargaController extends Controller
 {
-    protected $title = 'Warga' , $wargaContract;
-    public function __construct(WargaContract $wargaContract)
+    protected $title = 'Warga' , $wargaContract, $kusionerContract;
+    public function __construct(WargaContract $wargaContract, KusionerContract $kusionerContract)
     {
         $this->wargaContract = $wargaContract;
+        $this->kusionerContract = $kusionerContract;
     } 
     public function index()
     {
@@ -97,7 +99,13 @@ class WargaController extends Controller
     public function destroy($id)
     {
       try {
-        $kriteria = $this->wargaContract->delete($id);
+
+        // $kusinoner = $this->kusionerContract->getByCriteria(['kepala_keluarga_id' => $id]);
+        // foreach ($kusinoner as $k) {
+        //   $this->kusionerContract->delete($k->id);
+        // }
+
+        $kriteria = $this->wargaContract->deleteByWarga($id);
 
         if ($kriteria == 0) {
           return response()->json(['message' => 'Warga not found!', 'code' => 404], 404);

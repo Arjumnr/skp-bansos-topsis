@@ -98,6 +98,7 @@ Route::group(
                         Route::get('/data-keputusan-ternormalisasi', 'TopsisController@paginated_keputusan_ternormalisasi')->name('topsis.data2');
                         Route::get('/data-matriks-ternormalisasi-terbobot', 'TopsisController@paginated_matriks_ternormalisasi_terbobot')->name('topsis.data3');
                         Route::get('/data-solusi-ideal', 'TopsisController@paginated_solusi_ideal')->name('topsis.data4');
+                        Route::get('/data-jarak-solusi-ideal', 'TopsisController@paginated_jarak_solusi_ideal')->name('topsis.data5');
                         // Route::post('/', 'TopsisController@store')->name('topsis.store');
                         // Route::get('/{id}', 'TopsisController@show')->name('topsis.show');
                         // Route::put('/{id}', 'TopsisController@update')->name('topsis.update');

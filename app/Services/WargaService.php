@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\Kusioner;
 use App\Models\Warga;
 use App\Services\BaseRepository;
 use App\Services\Contracts\WargaContract;
@@ -122,6 +123,11 @@ class WargaService extends BaseRepository implements WargaContract
         return $this->model->where($criteria)->first();
     }
 
+    public function deleteByWarga($id)
+    {
+        Kusioner::where('kepala_keluarga_id', $id)->delete();   
+        return $this->model->where('id', $id)->delete();
+    }
 
     
 }

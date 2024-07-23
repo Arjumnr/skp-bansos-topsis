@@ -67,6 +67,12 @@ $(document).ready(function () {
         container: ".data-ajax-table_4"
     });
 
+    var load_data5 = setupPagination("#kt_table_paginate_5", {
+        url: "/data-jarak-solusi-ideal",
+        fn: function (page, search) { load_data5(page, search); },
+        container: ".data-ajax-table_5"
+    });
+
     // Search
     $("#kt_table_search").on("keyup change", function () {
         var search = $(this).val();
@@ -74,6 +80,7 @@ $(document).ready(function () {
         load_data2(1, search);
         load_data3(1, search);
         load_data4(1, search);
+        load_data5(1, search);
     });
 
     // Initial data load
@@ -81,4 +88,5 @@ $(document).ready(function () {
     load_data2();
     load_data3();
     load_data4();
+    load_data5();
 });

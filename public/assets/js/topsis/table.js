@@ -4,7 +4,7 @@ var KTUsersList = (function () {
         t,
         n,
         r,
-        o = document.getElementById("kt_table_data_penerima"),
+        o = document.getElementById("kt_table_data_penerima");
         c = () => {
             o.querySelectorAll(
                 '[data-kt-users-table-filter="delete_row"]'

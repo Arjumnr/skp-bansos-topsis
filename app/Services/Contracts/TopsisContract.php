@@ -15,6 +15,8 @@ interface TopsisContract
 
         public function paginated_solusi_ideal(Request $request);
 
+        public function paginated_jarak_solusi_ideal(Request $request);
+
         public function data();
 
         public function deleteIdAll($id);

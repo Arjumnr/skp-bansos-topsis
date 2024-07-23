@@ -4,7 +4,7 @@ var KTUsersList = (function () {
         t,
         n,
         r,
-        o = document.getElementById("kt_table_matriks_ternormalisasi_terbobot"),
+        o = document.getElementById("kt_table_matriks_ternormalisasi_terbobot");
         c = () => {
             o.querySelectorAll(
                 '[data-kt-users-table-filter="delete_row"]'

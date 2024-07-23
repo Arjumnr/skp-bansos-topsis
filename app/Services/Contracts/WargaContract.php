@@ -15,6 +15,8 @@ interface WargaContract
 
         public function update(array $data, $id);
 
+        public function deleteByWarga($id);
+
 
         //function from BaseService
         public function find($id);
