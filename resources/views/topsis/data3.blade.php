@@ -16,7 +16,7 @@
         <!--begin::Pernyataan=-->
         <td>
             <!--begin::Pernyataan -->
-            <div class="d-flex flex-column text-center text-center">
+            <div class="d-flex flex-column  ">
                 <div class="text-gray-800 text-hover-primary mb-1">{{ $v['bobot_pp'] }}</div>
             </div>
             <!--begin::Pernyataan -->
@@ -26,7 +26,7 @@
         <!--begin::Pernyataan=-->
         <td>
             <!--begin::Pernyataan -->
-            <div class="d-flex flex-column text-center">
+            <div class="d-flex flex-column ">
                 <div class="text-gray-800 text-hover-primary mb-1">{{ $v['bobot_jak'] }}</div>
             </div>
             <!--begin::Pernyataan -->
@@ -36,7 +36,7 @@
         <!--begin::Pernyataan=-->
         <td>
             <!--begin::Pernyataan -->
-            <div class="d-flex flex-column text-center">
+            <div class="d-flex flex-column ">
                 <div class="text-gray-800 text-hover-primary mb-1">{{ $v['bobot_p'] }}</div>
             </div>
             <!--begin::Pernyataan -->
@@ -46,7 +46,7 @@
         <!--begin::Pernyataan=-->
         <td>
             <!--begin::Pernyataan -->
-            <div class="d-flex flex-column text-center">
+            <div class="d-flex flex-column ">
                 <div class="text-gray-800 text-hover-primary mb-1">{{ $v['bobot_jl'] }}</div>
             </div>
             <!--begin::Pernyataan -->
@@ -56,7 +56,7 @@
         <!--begin::Pernyataan=-->
         <td>
             <!--begin::Pernyataan -->
-            <div class="d-flex flex-column text-center">
+            <div class="d-flex flex-column ">
                 <div class="text-gray-800 text-hover-primary mb-1">{{ $v['bobot_jd'] }}</div>
             </div>
             <!--begin::Pernyataan -->

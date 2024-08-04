@@ -95,9 +95,10 @@ class TopsisController extends Controller
       try {
         // Mendapatkan data dari $this->topsisContract->paginated_data_penerima($request)
         $datas = $this->topsisContract->paginated_jarak_solusi_ideal($request);
-        // return response()->json($datas, 200);
-        $data = $datas['data'];
+        // return response()->json($datas, 200);  
         
+        $data = $datas['data'];
+      
         $view = view('topsis.data5', compact('data'))->with('i', ($request->input('page', 1) -
           1) * $request->input('length'))->render();
 

@@ -16,7 +16,7 @@
         <!--begin::Pernyataan=-->
         <td>
             <!--begin::Pernyataan -->
-            <div class="d-flex flex-column text-center text-center">
+            <div class="d-flex flex-column ">
                 <div class="text-gray-800 text-hover-primary mb-1">{{ $v['D_plus'] }}</div>
             </div>
             <!--begin::Pernyataan -->
@@ -26,7 +26,7 @@
         <!--begin::Pernyataan=-->
         <td>
             <!--begin::Pernyataan -->
-            <div class="d-flex flex-column text-center">
+            <div class="d-flex flex-column ">
                 <div class="text-gray-800 text-hover-primary mb-1">{{ $v['D_minus'] }}</div>
             </div>
             <!--begin::Pernyataan -->
@@ -36,8 +36,18 @@
         <!--begin::Pernyataan=-->
         <td>
             <!--begin::Pernyataan -->
-            <div class="d-flex flex-column text-center">
+            <div class="d-flex flex-column ">
                 <div class="text-gray-800 text-hover-primary mb-1">{{ $v['C_i'] }}</div>
+            </div>
+            <!--begin::Pernyataan -->
+        </td>
+        <!--end::Pernyataan=-->
+
+        <!--begin::Pernyataan=-->
+        <td>
+            <!--begin::Pernyataan -->
+            <div class="d-flex flex-column ">
+                <div class="text-gray-800 text-hover-primary mb-1">{{ $v['rank'] }}</div>
             </div>
             <!--begin::Pernyataan -->
         </td>

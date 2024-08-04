@@ -55,7 +55,7 @@
                         </span>
                         <!--end::Svg Icon-->
                 </a>
-                <a href="javascript:void(0)" data-id="{{ $v['id'] }}" data-toggle="tooltip" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm" id="btn-delete">
+                {{-- <a href="javascript:void(0)" data-id="{{ $v['id'] }}" data-toggle="tooltip" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm" id="btn-delete">
                         <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
                         <span class="svg-icon svg-icon-3">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -65,7 +65,7 @@
                                 </svg>
                         </span>
                         <!--end::Svg Icon-->
-                </a>
+                </a> --}}
         </td>
         <!--end::Action=-->
 </tr>

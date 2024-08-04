@@ -16,7 +16,7 @@
         <!--begin::Pernyataan=-->
         <td>
             <!--begin::Pernyataan -->
-            <div class="d-flex flex-column text-center text-center">
+            <div class="d-flex flex-column  ">
                 <div class="text-gray-800 text-hover-primary mb-1">{{ $v['positif'] }}</div>
             </div>
             <!--begin::Pernyataan -->
@@ -26,7 +26,7 @@
         <!--begin::Pernyataan=-->
         <td>
             <!--begin::Pernyataan -->
-            <div class="d-flex flex-column text-center">
+            <div class="d-flex flex-column ">
                 <div class="text-gray-800 text-hover-primary mb-1">{{ $v['negatif'] }}</div>
             </div>
             <!--begin::Pernyataan -->

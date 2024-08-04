@@ -45,6 +45,8 @@
     <script src="{{ asset('assets/js/topsis/table.js') }}"></script>
     <script src="{{ asset('assets/js/topsis/table_2.js') }}"></script>
     <script src="{{ asset('assets/js/topsis/table_3.js') }}"></script>
+    <script src="{{ asset('assets/js/topsis/table_4.js') }}"></script>
+    <script src="{{ asset('assets/js/topsis/table_5.js') }}"></script>
 @endpush
 
 @section('content')
@@ -89,14 +91,14 @@
             <div id="kt_app_content_container" class="app-container container-xxl">
                 <!--begin::Card-->
                 <div class="card">
-                    <!--begin::Card header-->
-                    <div class=" d-flex justify-content-center card-header border-0 pt-6">
+                     <!--begin::Card header-->
+                     <div class=" d-flex justify-content-center card-header border-0 pt-6">
                         <!--begin::Card toolbar-->
                         <div class="card-toolbar">
                             <!--begin::Toolbar-->
                             <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
 
-                                <h3>Jarak Solusi Ideal Positif dan Negatif</h3>
+                                <h3>JARAK SOLUSI IDEAL POSITIF, NEGATIF DAN NILAI PREFERENSI</h3>
 
                             </div>
                             <!--end::Toolbar-->
@@ -128,6 +130,7 @@
                                     <th>Jarak Solusi Ideal Positif</th>
                                     <th>Jarak Solusi Ideal Negatif</th>
                                     <th>Nilai Preferensi</th>
+                                    <th>Rank</th>
                                 <!--end::Table row-->
                             </thead>
                             <!--end::Table head-->

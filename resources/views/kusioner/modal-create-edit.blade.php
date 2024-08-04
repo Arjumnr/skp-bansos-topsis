@@ -48,7 +48,12 @@
                                 data-dropdown-parent="#kt_modal_add_kusioner" data-placeholder="Pilih Warga..."
                                 class="form-select form-select-solid">
                                 <option value="">--- Pilih Warga ---</option>
-                                @foreach (Helper::getData('warga') as $item)
+                                @php
+                                    $kusioner = Helper::getData('kusioner');
+                                    $warga = Helper::getData('warga');
+                                    $wargas = $warga->whereNotIn('id', $kusioner->pluck('kepala_keluarga_id')->toArray());
+                                @endphp
+                                @foreach ($wargas as $item)
                                     <option value="{{ $item->id }}">{{ $item->kepala_keluarga }}</option>
                                 @endforeach
                             </select>

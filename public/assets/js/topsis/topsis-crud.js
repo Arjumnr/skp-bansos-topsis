@@ -17,13 +17,17 @@ $(document).ready(function () {
         var $pagination = $(paginationId);
         $pagination.twbsPagination(defaultOpts);
 
-        return function(page = 1, search = "", length = 5) {
+        return function(page = 1, search = "", length = 10) {
             $.ajax({
                 url: url_name + loadFunction.url,
                 method: "GET",
                 data: { page, search, length },
                 dataType: "json",
                 success: function(data) {
+                    console.log(url_name + loadFunction.url);
+                    console.log(data);
+
+                    
                     var total_page = data.total_page;
                     var current_page = $pagination.twbsPagination("getCurrentPage");
                     $pagination.twbsPagination("destroy");
@@ -34,6 +38,7 @@ $(document).ready(function () {
                         initiateStartPageClick: false,
                         onPageClick: function (event, page) {
                             loadFunction.fn(page, search);
+                            // console.log("onPageClick: " + page);
                         },
                     }));
                     $(loadFunction.container).html(data.html);
@@ -69,19 +74,19 @@ $(document).ready(function () {
 
     var load_data5 = setupPagination("#kt_table_paginate_5", {
         url: "/data-jarak-solusi-ideal",
-        fn: function (page, search) { load_data5(page, search); },
+        fn: function (page, search,) { load_data5(page, search); },
         container: ".data-ajax-table_5"
     });
 
     // Search
-    $("#kt_table_search").on("keyup change", function () {
-        var search = $(this).val();
-        load_data(1, search);
-        load_data2(1, search);
-        load_data3(1, search);
-        load_data4(1, search);
-        load_data5(1, search);
-    });
+    // $("#kt_table_search").on("keyup change", function () {
+    //     var search = $(this).val();
+    //     load_data(1, search);
+    //     load_data2(1, search);
+    //     load_data3(1, search);
+    //     load_data4(1, search);
+    //     load_data5(1, search);
+    // });
 
     // Initial data load
     load_data();
