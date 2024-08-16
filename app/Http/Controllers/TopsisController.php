@@ -75,7 +75,6 @@ class TopsisController extends Controller
     public function paginated_solusi_ideal(Request $request)
     {
       try {
-        // Mendapatkan data dari $this->topsisContract->paginated_data_penerima($request)
         $datas = $this->topsisContract->paginated_solusi_ideal($request);
         // return response()->json($datas, 200);
         $data = $datas['data'];
